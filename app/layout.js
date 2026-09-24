@@ -1,0 +1,3 @@
+import "./globals.css";
+export const metadata={metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"),title:{default:"Anime Hub — Anime News, Guides & Explanations",template:"%s | Anime Hub"},description:"Anime news, episode guides, character profiles, watch orders, rankings, manga updates and explained stories.",robots:{index:true,follow:true}};
+export default function RootLayout({children}){return <html lang="en"><body>{children}</body></html>}
