@@ -1,0 +1,5 @@
+import Link from "next/link";
+
+export const metadata={title:"Contact Anime Hub",description:"Contact Anime Hub for corrections, editorial questions and partnership enquiries."};
+
+export default function ContactPage(){return <main className="container py-16 max-w-3xl"><Link href="/" className="text-fuchsia-400">← Anime Hub</Link><h1 className="mt-8 text-5xl font-black">Contact Anime Hub</h1><p className="mt-6 text-white/70 leading-7">Found an error, have an editorial question, or want to discuss a partnership? We welcome useful feedback.</p><div className="mt-10 rounded-2xl border border-white/10 p-6"><h2 className="text-xl font-bold">Editorial corrections</h2><p className="mt-3 text-white/60">When reporting a correction, include the article URL, the specific claim that needs attention and a reliable source supporting the correction.</p><h2 className="mt-8 text-xl font-bold">General enquiries</h2><p className="mt-3 text-white/60">Email details can be added here once the site's dedicated editorial mailbox is established.</p></div></main>}
