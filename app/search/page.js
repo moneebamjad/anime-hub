@@ -9,13 +9,14 @@ export const metadata = {
 export default async function SearchPage({ searchParams }) {
   const params = await searchParams;
   const q = (params?.q || "").trim();
+  const safeQ = q.replace(/[%,]/g, " ");
   let articles = [];
   if (q) {
     const { data } = await supabase
       .from("articles")
       .select("id,title,slug,excerpt,published_at")
       .eq("status", "published")
-      .or(`title.ilike.%${q}%,excerpt.ilike.%${q}%`)
+       .or(`title.ilike.%${safeQ}%,excerpt.ilike.%${safeQ}%`)
       .order("published_at", { ascending: false })
       .limit(50);
     articles = data || [];
